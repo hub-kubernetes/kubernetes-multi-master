@@ -1,0 +1,3 @@
+ sudo scp -r /etc/kubernetes/pki kmaster2 
+ sudo scp -r /etc/kubernetes/pki kmaster3
+

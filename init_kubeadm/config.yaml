@@ -1,0 +1,20 @@
+vim config.yaml
+apiVersion: kubeadm.k8s.io/v1alpha3
+kind: ClusterConfiguration
+kubernetesVersion: stable
+apiServerCertSANs:
+- 10.142.0.8
+controlPlaneEndpoint: "10.142.0.8:6443"
+etcd:
+  external:
+    endpoints:
+    - https://10.142.0.2:2379
+    - https://10.142.0.3:2379
+    - https://10.142.0.4:2379
+    caFile: /etc/etcd/ca.pem
+    certFile: /etc/etcd/kubernetes.pem
+    keyFile: /etc/etcd/kubernetes-key.pem
+networking:
+  podSubnet: 10.30.0.0/24
+apiServerExtraArgs:
+  apiserver-count: "3"
