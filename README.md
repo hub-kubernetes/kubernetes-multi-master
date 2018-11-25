@@ -133,5 +133,8 @@ Initialize the cluster on admin node for secure access -
 
 44. You can now start using adminnode for all kubernetes cluster related activities without giving master access to everyone. 
 
+45. Add CNI from admin Node: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+
 
 
