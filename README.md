@@ -13,7 +13,9 @@ Servers -
    b. servers are able to ssh to each other 
 
 Admin Node 
+
 5. cd adminnodescripts
+
 6. Run : ./1_install_cffsl.sh to install cffsl (used to generate SSL keys)
 
 7. Run : ./2_install_kubectl_admin.sh to install kubectl executable 
