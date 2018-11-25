@@ -14,7 +14,7 @@ Servers -
 
 Admin Node 
 
-5. cd adminnodescripts
+5. cd multimaster
 
 6. Run : ./1_install_cffsl.sh to install cffsl (used to generate SSL keys)
 
@@ -44,14 +44,14 @@ Master Nodes and minion nodes -
 
 On all the nodes master + minion - run the below - 
 
-12. cd adminnodescripts/install_kubeadm
+12. cd multimaster/install_kubeadm
 
 13. Run - ./6_install_docker_kubeadm.sh to install docker + kubeadm + kubelet + kubectl 
 
 Only on Master Nodes - 
 Install etcd on master nodes as below - 
 
-14. cd adminnodescripts/install_etcd
+14. cd multimaster/install_etcd
 
 15. Run ./7_install_etcd.sh  - This will install ETCD and will copy the certificates from your home account to /etc/etcd
 
@@ -84,7 +84,7 @@ Initialize cluster as below -
 
 24. Login to any one of the master (kmaster1)
 
-25. cd adminnodescripts/init_kubeadm
+25. cd multimaster/init_kubeadm
 
 26. File config.yaml is provided with default kubeadm configuration required to initialize kubeadm. Please modify the ip addresses or names of certificates accordingly. You can also edit the pod subnet in the default configuration. 
     Additionally - apiServerCertSANs and controlPlaneEndpoint must be the ip address of the loadbalancer or the adminnode. 
@@ -105,7 +105,7 @@ Initialize cluster as below -
 
 32. mv pki  /etc/kubernetes/
 
-33. cd adminnodescripts/init_kubeadm
+33. cd multimaster/init_kubeadm
 
 34. execute - ./9_kubeadminit.sh
 
@@ -134,7 +134,6 @@ Initialize the cluster on admin node for secure access -
 44. You can now start using adminnode for all kubernetes cluster related activities without giving master access to everyone. 
 
 45. Add CNI from admin Node: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-
 
 
 
