@@ -4,7 +4,7 @@ Create a multi master kubernetes cluster
 
 Steps to create a Multi Master kubernetes cluster 
 
-Servers - 
+<b><u>Servers - </u> </b>
 
 1. adminnode - Loadbalancer (10.142.0.8)
 2. 3 Masters - Kmaster1, kmaster2, kmaster3 (10.142.0.2, 10.142.0.3, 10.142.0.4) 
