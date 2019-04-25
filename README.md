@@ -89,6 +89,8 @@ Initialize cluster as below -
 
 26. File config.yaml is provided with default kubeadm configuration required to initialize kubeadm. Please modify the ip addresses or names of certificates accordingly. You can also edit the pod subnet in the default configuration. 
     Additionally - apiServerCertSANs and controlPlaneEndpoint must be the ip address of the loadbalancer or the adminnode. 
+    
+kubeadm config migrate --old-config config.yaml  --new-config new.config.yaml
 
 27. Run : 9_kubeadminit.sh to initialize the cluster with the above config.yaml. Make sure to copy the last few lines for kubeadm join for nodes
 
