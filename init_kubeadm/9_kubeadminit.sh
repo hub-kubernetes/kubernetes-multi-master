@@ -1,1 +1,1 @@
-kubeadm init --config=config.yaml
+kubeadm init --config=new.config.yaml
